@@ -1,0 +1,260 @@
+{% comment %}theme-check-disable UndefinedObject{% endcomment %}
+{{ 'section-footer.css' | asset_url | stylesheet_tag }}
+{{ 'component-newsletter.css' | asset_url | stylesheet_tag }}
+{{ 'component-list-menu.css' | asset_url | stylesheet_tag }}
+{{ 'component-list-payment.css' | asset_url | stylesheet_tag }}
+{{ 'component-list-social.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .footer {
+    margin-top: {{ section.settings.margin_top | times: 0.75 | round: 0 }}px;
+  }
+
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .footer {
+      margin-top: {{ section.settings.margin_top }}px;
+    }
+
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  /* Custom footer styles to match the image */
+  .footer__content-top {
+    background: white;
+    padding: 3rem 0;
+  }
+
+  .footer__content-bottom {
+    background: #333;
+    color: white;
+    padding: 1rem 0;
+  }
+
+  .footer__content-bottom-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer__copyright {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .footer__copyright a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .footer__copyright a:hover {
+    text-decoration: underline;
+  }
+
+
+
+  .footer__country-selector {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .footer__country-flag {
+    width: 20px;
+    height: 15px;
+    background: #ff0000;
+    border-radius: 2px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .footer__content-bottom-wrapper {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .footer__copyright {
+      justify-content: center;
+    }
+  }
+{%- endstyle -%}
+
+<footer class="footer color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  <div class="footer__content-top page-width">
+    <div class="footer__blocks-wrapper grid grid--1-col grid--2-col grid--4-col-tablet{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+      {% if settings.animations_reveal_on_scroll %}
+        data-cascade
+      {% endif %}>
+      
+      <!-- PRODUCTS Column -->
+      <div class="footer-block grid__item footer-block--menu{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+        {% if settings.animations_reveal_on_scroll %}
+          data-cascade
+          style="--animation-order: 1;"
+        {% endif %}>
+        <h2 class="footer-block__heading inline-richtext">PRODUCTS</h2>
+        <ul class="footer-block__details-content list-unstyled">
+          <li><a href="#" class="link link--text list-menu__item list-menu__item--link">Shoes</a></li>
+          <li><a href="#" class="link link--text list-menu__item list-menu__item--link">Apparels</a></li>
+          <li><strong>FEATURED:</strong></li>
+          <li><a href="#" class="link link--text list-menu__item list-menu__item--link">New Arrivals</a></li>
+          <li><a href="#" class="link link--text list-menu__item list-menu__item--link">Impossible is Nothing</a></li>
+          <li><a href="#" class="link link--text list-menu__item list-menu__item--link">Sale</a></li>
+          <li><a href="#" class="link link--text list-menu__item list-menu__item--link">Last Chance</a></li>
+        </ul>
+      </div>
+
+      <!-- SPORT Column -->
+      <div class="footer-block grid__item footer-block--menu{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+        {% if settings.animations_reveal_on_scroll %}
+          data-cascade
+          style="--animation-order: 2;"
+        {% endif %}>
+        <h2 class="footer-block__heading inline-richtext">SPORT</h2>
+        <ul class="footer-block__details-content list-unstyled">
+          <li><a href="#" class="link link--text list-menu__item list-menu__item--link">Predator Football Boots</a></li>
+          <li><a href="#" class="link link--text list-menu__item list-menu__item--link">X Football Boots</a></li>
+          <li><a href="#" class="link link--text list-menu__item list-menu__item--link">Copa Football Boots</a></li>
+          <li><a href="#" class="link link--text list-menu__item list-menu__item--link">Manchester United</a></li>
+          <li><a href="#" class="link link--text list-menu__item list-menu__item--link">Juventus</a></li>
+          <li><a href="#" class="link link--text list-menu__item list-menu__item--link">Real Madrid</a></li>
+          <li><a href="#" class="link link--text list-menu__item list-menu__item--link">Arsenal</a></li>
+          <li><a href="#" class="link link--text list-menu__item list-menu__item--link">Bayern Munchen</a></li>
+          <li><a href="#" class="link link--text list-menu__item list-menu__item--link">Boost Shoes</a></li>
+          <li><a href="#" class="link link--text list-menu__item list-menu__item--link">Ultraboost</a></li>
+        </ul>
+      </div>
+
+      <!-- COLLECTIONS Column -->
+      <div class="footer-block grid__item footer-block--menu{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+        {% if settings.animations_reveal_on_scroll %}
+          data-cascade
+          style="--animation-order: 3;"
+        {% endif %}>
+        <h2 class="footer-block__heading inline-richtext">COLLECTIONS</h2>
+        <ul class="footer-block__details-content list-unstyled">
+          <li><a href="#" class="link link--text list-menu__item list-menu__item--link">Stan Smith</a></li>
+          <li><a href="#" class="link link--text list-menu__item list-menu__item--link">Superstar</a></li>
+          <li><a href="#" class="link link--text list-menu__item list-menu__item--link">Ultraboost</a></li>
+          <li><a href="#" class="link link--text list-menu__item list-menu__item--link">NMD</a></li>
+          <li><a href="#" class="link link--text list-menu__item list-menu__item--link">adidas Exclusive</a></li>
+        </ul>
+      </div>
+
+      <!-- LEGAL Column -->
+      <div class="footer-block grid__item footer-block--menu{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+        {% if settings.animations_reveal_on_scroll %}
+          data-cascade
+          style="--animation-order: 4;"
+        {% endif %}>
+        <h2 class="footer-block__heading inline-richtext">LEGAL</h2>
+        <ul class="footer-block__details-content list-unstyled">
+          <li><a href="#" class="link link--text list-menu__item list-menu__item--link">Privacy Policy</a></li>
+          <li><a href="#" class="link link--text list-menu__item list-menu__item--link">Terms and Conditions</a></li>
+          <li><a href="#" class="link link--text list-menu__item list-menu__item--link">Delivery Terms</a></li>
+          <li><strong>SUPPORT:</strong></li>
+          <li><a href="#" class="link link--text list-menu__item list-menu__item--link">Contact Us</a></li>
+          <li><a href="#" class="link link--text list-menu__item list-menu__item--link">Size Charts</a></li>
+          <li><a href="#" class="link link--text list-menu__item list-menu__item--link">Ordering</a></li>
+          <li><a href="#" class="link link--text list-menu__item list-menu__item--link">Promotions & Vouchers</a></li>
+          <li><a href="#" class="link link--text list-menu__item list-menu__item--link">Payment</a></li>
+          <li><a href="#" class="link link--text list-menu__item list-menu__item--link">Delivery</a></li>
+          <li><a href="#" class="link link--text list-menu__item list-menu__item--link">Returns and Refunds</a></li>
+          <li><a href="#" class="link link--text list-menu__item list-menu__item--link">About adidas Products</a></li>
+          <li><a href="#" class="link link--text list-menu__item list-menu__item--link">Using Our Site</a></li>
+          <li><a href="#" class="link link--text list-menu__item list-menu__item--link">Your Account</a></li>
+          <li><a href="#" class="link link--text list-menu__item list-menu__item--link">Order Tracker</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer__content-bottom{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+    {% if settings.animations_reveal_on_scroll %}
+      data-cascade
+    {% endif %}>
+    <div class="footer__content-bottom-wrapper page-width">
+      <!-- Country Selector -->
+      <div class="footer__country-selector">
+        <div class="footer__country-flag"></div>
+        <span>Indonesia</span>
+      </div>
+
+      <!-- Copyright and Legal Links -->
+      <div class="footer__copyright caption">
+        <small class="copyright__content">
+          <a href="#">Privacy Policy</a>
+        </small>
+        <small class="copyright__content">
+          <a href="#">Terms and Conditions</a>
+        </small>
+        <small class="copyright__content">
+          &copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: routes.root_url -}}
+        </small>
+      </div>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "t:sections.footer.name",
+  "class": "section-footer",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.spacing"
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.footer.settings.margin_top.label",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ]
+}
+{% endschema %}
